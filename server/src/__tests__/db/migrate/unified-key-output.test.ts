@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { up as runLegacyBaseline } from '../../../db/migrations/20260101_000000_legacy_baseline.js';
 
 const ORIGINAL_NODE_ENV = process.env.NODE_ENV;
+const ORIGINAL_CI = process.env.CI;
 const ORIGINAL_ENCRYPTION_KEY = process.env.ENCRYPTION_KEY;
 const ORIGINAL_KUBERNETES_SERVICE_HOST = process.env.KUBERNETES_SERVICE_HOST;
 const ORIGINAL_STDOUT_TTY = Object.getOwnPropertyDescriptor(process.stdout, 'isTTY');
@@ -14,6 +15,7 @@ describe('legacy baseline unified API key output', () => {
     output = [];
     process.env.ENCRYPTION_KEY = '0'.repeat(64);
     delete process.env.KUBERNETES_SERVICE_HOST;
+    delete process.env.CI;
 
     vi.spyOn(console, 'log').mockImplementation((...args: unknown[]) => {
       output.push(args.map(String).join(' '));
@@ -27,6 +29,7 @@ describe('legacy baseline unified API key output', () => {
   afterEach(() => {
     vi.restoreAllMocks();
     restoreEnv('NODE_ENV', ORIGINAL_NODE_ENV);
+    restoreEnv('CI', ORIGINAL_CI);
     restoreEnv('ENCRYPTION_KEY', ORIGINAL_ENCRYPTION_KEY);
     restoreEnv('KUBERNETES_SERVICE_HOST', ORIGINAL_KUBERNETES_SERVICE_HOST);
 
@@ -62,6 +65,17 @@ describe('legacy baseline unified API key output', () => {
   it('does not disclose a key from a Kubernetes TTY', () => {
     process.env.NODE_ENV = 'development';
     process.env.KUBERNETES_SERVICE_HOST = '10.0.0.1';
+    setStdoutTTY(true);
+
+    const key = runBaselineAndReadKey();
+
+    expect(output.join('')).not.toContain(key);
+    expect(output.join('')).toContain('not printed to logs');
+  });
+
+  it('does not disclose a key in CI even with a development TTY', () => {
+    process.env.NODE_ENV = 'development';
+    process.env.CI = 'true';
     setStdoutTTY(true);
 
     const key = runBaselineAndReadKey();
