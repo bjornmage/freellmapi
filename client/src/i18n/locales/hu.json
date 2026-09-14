@@ -47,8 +47,8 @@
     "newEmail": "Új e-mail",
     "resetCode": "Visszaállítási kód",
     "resetCodePlaceholder": "kód a szerver naplójából",
-    "resetCodeHint": "A jelszó-visszaállítási kódot a szerver naplójában találja.",
-    "forgotPasswordDescription": "Kattintson alább a visszaállítási kód létrehozásához. A kód megjelenik a szerver naplójában — írja be ide az új jelszó beállításához.",
+    "resetCodeHint": "A kód a szerver naplójában található. E-mailben soha nem küldjük el.",
+    "forgotPasswordDescription": "Kattintson az alábbi gombra a visszaállítási kód létrehozásához. A kód a szerver naplójába kerül, e-mailben soha nem küldjük el. Írja be ide az új jelszó beállításához.",
     "requestResetCode": "Kód küldése",
     "requestingResetCode": "Küldés…",
     "resetPassword": "Jelszó visszaállítása",
@@ -58,7 +58,9 @@
     "backToLogin": "Vissza a bejelentkezéshez",
     "passwordChanged": "A jelszó módosult.",
     "emailChanged": "Az e-mail-cím módosult.",
-    "passwordReset": "A jelszó visszaállt. Jelentkezzen be."
+    "passwordReset": "A jelszó visszaállt. Jelentkezzen be.",
+    "resetCodeDockerHint": "Docker alatt fut? A kód a konténer naplójában található: docker logs <container>.",
+    "desktopSessionFailed": "Az irányítópult nem tudott bejelentkezni a helyi szerverre. Lépjen ki a FreeLLMAPI alkalmazásból, és nyissa meg újra."
   },
   "common": {
     "save": "Mentés",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" vagy egy család a Beágyazások fülről",
     "endpointMessages": "Üzenetek",
     "endpointMessagesHint": "Anthropic-kompatibilis (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) modellek",
     "anthropicDesc": "Irányíts egy Claude vagy Anthropic SDK klienst erre a szerverre. Anthropic kliensek küldenek Claude modellnevet — mindegyiket az Auto-hoz rendelik (a router egy ingyenes modellt választ), vagy rögzítik egy adott példányt.",
     "anthropicBaseUrl": "Alap URL",
@@ -582,7 +588,8 @@
       "subsetNote": "Ez a kulcs a kijelölt modellekre lesz korlátozva. Ezt később a kulcs sorában módosíthatja.",
       "skip": "Most nem",
       "scopedOne": "A kulcs 1 modellre korlátozva",
-      "scopedOther": "A kulcs {count} modellre korlátozva"
+      "scopedOther": "A kulcs {count} modellre korlátozva",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "Kliensprofilok",
     "cpDesc": "Kliensenkénti API-kulcsok, mindegyikhez saját rendszerprompt, amelyet a szerver mindig alkalmaz.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "Kulcs szerkesztése",
+    "editPlatformLocked": "A szolgáltató és a végpont a létrehozás után nem módosítható.",
+    "editCredentialHint": "A jelenlegi kulcs megtartásához hagyja üresen.",
+    "editCredentialPartsRequired": "Adja meg a fiókazonosítót és az API-jogkivonatot is.",
+    "editModels": "Modellek szerkesztése",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

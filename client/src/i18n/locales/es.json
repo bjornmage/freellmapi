@@ -47,8 +47,8 @@
     "newEmail": "Nuevo correo electrónico",
     "resetCode": "Código de restablecimiento",
     "resetCodePlaceholder": "código de los registros del servidor",
-    "resetCodeHint": "Revisa los registros del servidor para obtener el código de restablecimiento de contraseña.",
-    "forgotPasswordDescription": "Haz clic en el botón de abajo para generar un código de restablecimiento. El código aparecerá en los registros del servidor — ingrésalo aquí para establecer una nueva contraseña.",
+    "resetCodeHint": "El código está en el registro del servidor. Nunca se envía por correo electrónico.",
+    "forgotPasswordDescription": "Haz clic en el botón de abajo para generar un código de restablecimiento. El código se escribe en el registro del servidor, nunca se envía por correo. Ingrésalo aquí para establecer una nueva contraseña.",
     "requestResetCode": "Enviar código de restablecimiento",
     "requestingResetCode": "Enviando…",
     "resetPassword": "Restablecer contraseña",
@@ -58,7 +58,9 @@
     "backToLogin": "Volver al inicio de sesión",
     "passwordChanged": "Contraseña cambiada correctamente.",
     "emailChanged": "Correo electrónico cambiado correctamente.",
-    "passwordReset": "Contraseña restablecida correctamente. Por favor, inicia sesión."
+    "passwordReset": "Contraseña restablecida correctamente. Por favor, inicia sesión.",
+    "resetCodeDockerHint": "¿Usas Docker? El código está en el registro del contenedor: docker logs <container>.",
+    "desktopSessionFailed": "El panel no pudo iniciar sesión en el servidor local. Cierra FreeLLMAPI y vuelve a abrirlo."
   },
   "common": {
     "save": "Guardar",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: «auto» o una familia de la pestaña Embeddings",
     "endpointMessages": "Messages",
     "endpointMessagesHint": "Compatible con Anthropic (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Modelos Claude (Anthropic)",
     "anthropicDesc": "Apunta un cliente SDK de Claude o Anthropic a este servidor. Los clientes de Anthropic envían nombres de modelos Claude: asigna cada uno a Auto (el router elige un modelo gratuito) o fija uno específico.",
     "anthropicBaseUrl": "URL base",
@@ -582,7 +588,8 @@
       "subsetNote": "Esta clave se limitará a los modelos seleccionados. Puedes cambiarlo más adelante desde la fila de la clave.",
       "skip": "Ahora no",
       "scopedOne": "Clave limitada a 1 modelo",
-      "scopedOther": "Clave limitada a {count} modelos"
+      "scopedOther": "Clave limitada a {count} modelos",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "Perfiles de cliente",
     "cpDesc": "Claves API por cliente, cada una con un prompt de sistema que el servidor aplica siempre.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "Editar clave",
+    "editPlatformLocked": "El proveedor y el endpoint no pueden cambiarse después de crearlos.",
+    "editCredentialHint": "Déjalo vacío para conservar la clave actual.",
+    "editCredentialPartsRequired": "Introduce tanto el ID de cuenta como el token de API.",
+    "editModels": "Editar modelos",
+    "editModelsHint": "Elige qué modelos del catálogo puede servir esta clave. Selecciona todo para quitar la restricción.",
+    "editModelsCustomHint": "Elige qué modelos registrados del endpoint puede servir esta clave. Selecciona todo para quitar la restricción.",
+    "editModelsSync": "Comprobar actualizaciones del catálogo",
+    "editModelsSyncing": "Comprobando…",
+    "editModelsSynced": "Catálogo de modelos comprobado"
   },
   "backups": {
     "title": "Backups",

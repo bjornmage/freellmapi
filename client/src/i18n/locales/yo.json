@@ -47,8 +47,8 @@
     "newEmail": "Ìmẹ́lì tuntun",
     "resetCode": "Kóòdù àtúnṣe",
     "resetCodePlaceholder": "kóòdù láti inú ìwé ìṣẹ̀lẹ̀ olùpèsè",
-    "resetCodeHint": "Wo kóòdù àtúnṣe nínú ìwé ìṣẹ̀lẹ̀ olùpèsè.",
-    "forgotPasswordDescription": "Tẹ ìsàlẹ̀ láti ṣẹ̀dá kóòdù àtúnṣe. Kóòdù náà yóò hàn nínú ìwé ìṣẹ̀lẹ̀ — tẹ̀ ẹ́ síbí láti ṣàgbékalẹ̀ ọ̀rọ̀ aṣínà tuntun.",
+    "resetCodeHint": "Kóòdù náà wà nínú ìwé ìṣẹ̀lẹ̀ olùpèsè. A kì í fi ímeèlì rán an láé.",
+    "forgotPasswordDescription": "Tẹ bọ́tìnì ìsàlẹ̀ láti ṣẹ̀dá kóòdù àtúnṣe. A kọ kóòdù náà sínú ìwé ìṣẹ̀lẹ̀ olùpèsè, a kì í fi ímeèlì rán an láé. Tẹ̀ ẹ́ síbí láti ṣàgbékalẹ̀ ọ̀rọ̀ aṣínà tuntun.",
     "requestResetCode": "Fi kóòdù ránṣẹ́",
     "requestingResetCode": "Ń fi ránṣẹ́…",
     "resetPassword": "Tún ọ̀rọ̀ aṣínà ṣe",
@@ -58,7 +58,9 @@
     "backToLogin": "Padà sí ìwọlé",
     "passwordChanged": "A yí ọ̀rọ̀ aṣínà padà.",
     "emailChanged": "A yí ìmẹ́lì padà.",
-    "passwordReset": "A tún ọ̀rọ̀ aṣínà ṣe. Jọ̀wọ́ wọlé."
+    "passwordReset": "A tún ọ̀rọ̀ aṣínà ṣe. Jọ̀wọ́ wọlé.",
+    "resetCodeDockerHint": "Ṣé o ń lo Docker? Kóòdù náà wà nínú ìwé ìṣẹ̀lẹ̀ kọ́ntéènà: docker logs <container>.",
+    "desktopSessionFailed": "Dáṣíbọ́ọ̀dù kò lè wọlé sí olùpèsè agbègbè. Pa FreeLLMAPI, kí o sì tún ṣí i."
   },
   "common": {
     "save": "Fipamọ",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" tabi idile kan lati taabu Awọn ifibọ",
     "endpointMessages": "Awọn ifiranṣẹ",
     "endpointMessagesHint": "Anthropic-ibaramu (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) si dede",
     "anthropicDesc": "Tọkasi Claude tabi Anthropic SDK onibara ni olupin yii. Awọn alabara Anthropic firanṣẹ awọn orukọ awoṣe Claude — maapu kọọkan si Aifọwọyi (olulana mu awoṣe ọfẹ) tabi pin kan pato.",
     "anthropicBaseUrl": "Mimọ URL",
@@ -582,7 +588,8 @@
       "subsetNote": "Bọtìnì yìí yóò ní ààlà sí àwọn awoṣe tí a yàn. O lè yí èyí padà lẹ́yìn náà láti orí ìlà bọtìnì náà.",
       "skip": "Kì í ṣe báyìí",
       "scopedOne": "Bọtìnì ní ààlà sí awoṣe 1",
-      "scopedOther": "Bọtìnì ní ààlà sí awoṣe {count}"
+      "scopedOther": "Bọtìnì ní ààlà sí awoṣe {count}",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "Àwọn pírófáìlì oníbàárà",
     "cpDesc": "Àwọn kọ́kọ́rọ́ API fún oníbàárà kọ̀ọ̀kan, ọ̀kọ̀ọ̀kan pẹ̀lú ìtọ́ni ètò tí sáfà máa ń lò nígbà gbogbo.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "Ṣàtúnṣe bọtìnì",
+    "editPlatformLocked": "Àgbékalẹ̀ àti endpoint kì í yí padà lẹ́yìn ìdámẹ̀.",
+    "editCredentialHint": "Fi aṣàjá sílẹ̀ láti fi bọtìnì tí ó wà nílẹ̀.",
+    "editCredentialPartsRequired": "Tẹ́ ORukọ àkántí àti API token sílẹ̀.",
+    "editModels": "Ṣàtúnṣe àwọn aṣàpẹẹrẹ",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

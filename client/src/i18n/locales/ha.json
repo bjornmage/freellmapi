@@ -47,8 +47,8 @@
     "newEmail": "Sabon imel",
     "resetCode": "Lambar sake saiti",
     "resetCodePlaceholder": "lamba daga tarihin uwar garke",
-    "resetCodeHint": "Duba lambar sake saiti a tarihin uwar garke.",
-    "forgotPasswordDescription": "Danna ƙasa don ƙirƙirar lamba. Lambar za ta bayyana a tarihin uwar garke — shigar da ita nan don sabuwar kalmar sirri.",
+    "resetCodeHint": "Lambar tana cikin tarihin uwar garke. Ba a taɓa aika ta ta imel ba.",
+    "forgotPasswordDescription": "Danna maɓallin da ke ƙasa don ƙirƙirar lambar sake saiti. Ana rubuta lambar a cikin tarihin uwar garke, ba a taɓa aika ta ta imel ba. Shigar da ita nan don saita sabuwar kalmar sirri.",
     "requestResetCode": "Aika lamba",
     "requestingResetCode": "Ana aikawa…",
     "resetPassword": "Sake saita kalmar sirri",
@@ -58,7 +58,9 @@
     "backToLogin": "Koma shiga",
     "passwordChanged": "An canza kalmar sirri.",
     "emailChanged": "An canza imel.",
-    "passwordReset": "An sake saita kalmar sirri. Da fatan shiga."
+    "passwordReset": "An sake saita kalmar sirri. Da fatan shiga.",
+    "resetCodeDockerHint": "Kana amfani da Docker? Lambar tana cikin tarihin kwantena: docker logs <container>.",
+    "desktopSessionFailed": "Dashboard ɗin bai iya shiga uwar garken gida ba. Rufe FreeLLMAPI ka sake buɗe shi."
   },
   "common": {
     "save": "Ajiye",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" ko iyali daga shafin Haɗawa",
     "endpointMessages": "Saƙonni",
     "endpointMessagesHint": "Anthropic-mai jituwa (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Samfuran Claude (Anthropic).",
     "anthropicDesc": "Nuna abokin ciniki na Claude ko Anthropic SDK a wannan uwar garken. Abokan ciniki na Anthropic suna aika Claude samfurin sunaye - taswirar kowane zuwa Auto (na'ura mai ba da hanya tsakanin hanyoyin sadarwa ta zaɓi samfurin kyauta) ko sanya takamaiman ɗaya.",
     "anthropicBaseUrl": "Tushen URL",
@@ -582,7 +588,8 @@
       "subsetNote": "Wannan maɓalli zai iyakantu ga samfuran da aka zaɓa. Za ka iya canja wannan daga baya a jerin maɓallin.",
       "skip": "Ba yanzu ba",
       "scopedOne": "An iyakance maɓalli ga samfuri 1",
-      "scopedOther": "An iyakance maɓalli ga samfura {count}"
+      "scopedOther": "An iyakance maɓalli ga samfura {count}",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "Bayanan martabar abokan ciniki",
     "cpDesc": "Maɓallan API na kowane abokin ciniki, kowanne da umarnin tsarin da sabar ke amfani da shi koyaushe.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "Gyara maɓallin",
+    "editPlatformLocked": "Ba a iya canza mai bayarwa ko endpoint bayan ƙirƙira ba.",
+    "editCredentialHint": "Bar sarari don rike maɓallin na yanzu.",
+    "editCredentialPartsRequired": "Shigar da ID na asusu da API token tare.",
+    "editModels": "Gyara samfura",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

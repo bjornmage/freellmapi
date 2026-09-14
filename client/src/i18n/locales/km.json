@@ -47,8 +47,8 @@
     "newEmail": "អ៊ីមែលថ្មី",
     "resetCode": "លេខកូដកំណត់ឡើងវិញ",
     "resetCodePlaceholder": "លេខកូដពីកំណត់ហេតុម៉ាស៊ីនមេ",
-    "resetCodeHint": "សូមមើលលេខកូដនៅក្នុងកំណត់ហេតុម៉ាស៊ីនមេ។",
-    "forgotPasswordDescription": "ចុចខាងក្រោមដើម្បីបង្កើតលេខកូដ។ លេខកូដនឹងបង្ហាញក្នុងកំណត់ហេតុម៉ាស៊ីនមេ — បញ្ចូលនៅទីនេះដើម្បីកំណត់ពាក្យសម្ងាត់ថ្មី។",
+    "resetCodeHint": "លេខកូដស្ថិតនៅក្នុងកំណត់ហេតុម៉ាស៊ីនមេ។ វាមិនដែលត្រូវបានផ្ញើតាមអ៊ីមែលឡើយ។",
+    "forgotPasswordDescription": "ចុចប៊ូតុងខាងក្រោមដើម្បីបង្កើតលេខកូដកំណត់ឡើងវិញ។ លេខកូដត្រូវបានសរសេរទៅក្នុងកំណត់ហេតុម៉ាស៊ីនមេ មិនដែលផ្ញើតាមអ៊ីមែលឡើយ។ បញ្ចូលនៅទីនេះដើម្បីកំណត់ពាក្យសម្ងាត់ថ្មី។",
     "requestResetCode": "ផ្ញើលេខកូដ",
     "requestingResetCode": "កំពុងផ្ញើ…",
     "resetPassword": "កំណត់ពាក្យសម្ងាត់ឡើងវិញ",
@@ -58,7 +58,9 @@
     "backToLogin": "ត្រឡប់ទៅចូលគណនី",
     "passwordChanged": "បានប្តូរពាក្យសម្ងាត់ដោយជោគជ័យ។",
     "emailChanged": "បានប្តូរអ៊ីមែលដោយជោគជ័យ។",
-    "passwordReset": "បានកំណត់ពាក្យសម្ងាត់ឡើងវិញ។ សូមចូលគណនី។"
+    "passwordReset": "បានកំណត់ពាក្យសម្ងាត់ឡើងវិញ។ សូមចូលគណនី។",
+    "resetCodeDockerHint": "កំពុងដំណើរការក្នុង Docker មែនទេ? លេខកូដស្ថិតនៅក្នុងកំណត់ហេតុកុងតឺន័រ៖ docker logs <container>។",
+    "desktopSessionFailed": "ផ្ទាំងគ្រប់គ្រងមិនអាចចូលទៅម៉ាស៊ីនមេមូលដ្ឋានបានទេ។ សូមបិទ FreeLLMAPI ហើយបើកវាឡើងវិញ។"
   },
   "common": {
     "save": "រក្សាទុក",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" ឬគ្រួសារពីផ្ទាំង Embeddings",
     "endpointMessages": "សារ",
     "endpointMessagesHint": "Anthropic (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic)",
     "anthropicDesc": "បង្ហាញអតិថិជន Claude ឬ Anthropic SDK ទៅកាន់ម៉ាស៊ីនបម្រើនេះ។ Anthropic client ផ្ញើឈ្មោះម៉ូដែល Claude — ផ្គូផ្គងទៅ Auto (router ជ្រើសរើសម៉ូដែលឥតគិតថ្លៃ) ឬ pin ម៉ូដែលជាក់លាក់មួយ។",
     "anthropicBaseUrl": "Base URL",
@@ -582,7 +588,8 @@
       "subsetNote": "កូនសោនេះនឹងត្រូវកំណត់ត្រឹមម៉ូដែលដែលបានជ្រើសរើស។ អ្នកអាចផ្លាស់ប្តូរវានៅពេលក្រោយពីជួរដេករបស់កូនសោ។",
       "skip": "មិនមែនឥឡូវទេ",
       "scopedOne": "កូនសោកំណត់ត្រឹមម៉ូដែល 1",
-      "scopedOther": "កូនសោកំណត់ត្រឹមម៉ូដែល {count}"
+      "scopedOther": "កូនសោកំណត់ត្រឹមម៉ូដែល {count}",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "ប្រវត្តិរូបអតិថិជន",
     "cpDesc": "សោ API សម្រាប់អតិថិជននីមួយៗ ដែលមាន system prompt ដែលម៉ាស៊ីនមេអនុវត្តជានិច្ច។",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "កែសម្រួលកូនសោ",
+    "editPlatformLocked": "មិនអាចផ្លាស់ប្ដូរក្រុមហ៊ុនផ្ដល់សេវា ឬចំណុចបញ្ចប់បានទេ បន្ទាប់ពីបង្កើត។",
+    "editCredentialHint": "ទុកចំហរ ដើម្បីរក្សាកូនសោបច្ចុប្បន្ន។",
+    "editCredentialPartsRequired": "សូមបញ្ចូលទាំង ID គណនី និង token API។",
+    "editModels": "កែសម្រួលម៉ូដេល",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

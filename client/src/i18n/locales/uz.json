@@ -47,8 +47,8 @@
     "newEmail": "Yangi e-pochta",
     "resetCode": "Tiklash kodi",
     "resetCodePlaceholder": "server jurnallaridagi kod",
-    "resetCodeHint": "Parolni tiklash kodini server jurnallarida ko'ring.",
-    "forgotPasswordDescription": "Tiklash kodini yaratish uchun quyiga bosing. Kod server jurnallarida ko'rinadi — yangi parol o'rnatish uchun shu yerga kiriting.",
+    "resetCodeHint": "Kod server jurnalida. U hech qachon elektron pochta orqali yuborilmaydi.",
+    "forgotPasswordDescription": "Tiklash kodini yaratish uchun quyidagi tugmani bosing. Kod server jurnaliga yoziladi, hech qachon elektron pochta orqali yuborilmaydi. Yangi parol o'rnatish uchun shu yerga kiriting.",
     "requestResetCode": "Kodni yuborish",
     "requestingResetCode": "Yuborilmoqda…",
     "resetPassword": "Parolni tiklash",
@@ -58,7 +58,9 @@
     "backToLogin": "Kirishga qaytish",
     "passwordChanged": "Parol muvaffaqiyatli o'zgartirildi.",
     "emailChanged": "E-pochta muvaffaqiyatli o'zgartirildi.",
-    "passwordReset": "Parol tiklandi. Iltimos, kiring."
+    "passwordReset": "Parol tiklandi. Iltimos, kiring.",
+    "resetCodeDockerHint": "Docker ichida ishlayaptimi? Kod konteyner jurnalida: docker logs <container>.",
+    "desktopSessionFailed": "Boshqaruv paneli lokal serverga kira olmadi. FreeLLMAPI dasturini yopib, qayta oching."
   },
   "common": {
     "save": "Saqlash",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" yoki O'rnatishlar sahifasidan oila",
     "endpointMessages": "Xabarlar",
     "endpointMessagesHint": "Anthropic-mos (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) modellari",
     "anthropicDesc": "Claude yoki Anthropic SDK mijozini ushbu serverga qarating. Anthropic mijozlari Claude model nomlarini yuborishadi - har birini Avtomatikga xaritalash (yo'riqnoma bepul modelni tanlaydi) yoki ma'lum birini qo'yish.",
     "anthropicBaseUrl": "Baza URL",
@@ -582,7 +588,8 @@
       "subsetNote": "Bu kalit faqat tanlangan modellar bilan cheklanadi. Buni keyinroq kalit qatoridan o‘zgartirishingiz mumkin.",
       "skip": "Hozir emas",
       "scopedOne": "Kalit 1 ta model bilan cheklandi",
-      "scopedOther": "Kalit {count} ta model bilan cheklandi"
+      "scopedOther": "Kalit {count} ta model bilan cheklandi",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "Mijoz profillari",
     "cpDesc": "Har bir mijoz uchun alohida API kaliti; uning tizim promptini server doim qo'llaydi.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "Kalitni tahrirlash",
+    "editPlatformLocked": "Yaratilgandan keyin provayder va endpointni o‘zgartirib bo‘lmaydi.",
+    "editCredentialHint": "Joriy kalitni saqlash uchun bo‘sh qoldiring.",
+    "editCredentialPartsRequired": "Ham hisob ID sini, ham API tokenini kiriting.",
+    "editModels": "Modellarni tahrirlash",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

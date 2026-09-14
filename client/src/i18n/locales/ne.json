@@ -47,8 +47,8 @@
     "newEmail": "नयाँ इमेल",
     "resetCode": "रिसेट कोड",
     "resetCodePlaceholder": "सर्भर लगबाट कोड",
-    "resetCodeHint": "पासवर्ड रिसेट कोड सर्भर लगमा हेर्नुहोस्।",
-    "forgotPasswordDescription": "रिसेट कोड बनाउन तल क्लिक गर्नुहोस्। कोड सर्भर लगमा देखिनेछ — नयाँ पासवर्ड सेट गर्न यहाँ हाल्नुहोस्।",
+    "resetCodeHint": "कोड सर्भर लगमा छ। यो कहिल्यै इमेलबाट पठाइँदैन।",
+    "forgotPasswordDescription": "रिसेट कोड बनाउन तलको बटनमा क्लिक गर्नुहोस्। कोड सर्भर लगमा लेखिन्छ, कहिल्यै इमेल गरिँदैन। नयाँ पासवर्ड सेट गर्न यहाँ हाल्नुहोस्।",
     "requestResetCode": "रिसेट कोड पठाउनुहोस्",
     "requestingResetCode": "पठाउँदै…",
     "resetPassword": "पासवर्ड रिसेट गर्नुहोस्",
@@ -58,7 +58,9 @@
     "backToLogin": "साइन इनमा फर्कनुहोस्",
     "passwordChanged": "पासवर्ड सफलतापूर्वक परिवर्तन भयो।",
     "emailChanged": "इमेल सफलतापूर्वक परिवर्तन भयो।",
-    "passwordReset": "पासवर्ड रिसेट भयो। कृपया साइन इन गर्नुहोस्।"
+    "passwordReset": "पासवर्ड रिसेट भयो। कृपया साइन इन गर्नुहोस्।",
+    "resetCodeDockerHint": "Docker मा चलाइरहनुभएको छ? कोड कन्टेनर लगमा छ: docker logs <container>।",
+    "desktopSessionFailed": "ड्यासबोर्डले लोकल सर्भरमा साइन इन गर्न सकेन। FreeLLMAPI बन्द गरेर फेरि खोल्नुहोस्।"
   },
   "common": {
     "save": "बचत गर्नुहोस्",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" वा सम्मिलित ट्याबबाट परिवार",
     "endpointMessages": "सन्देशहरू",
     "endpointMessagesHint": "Anthropic- मिल्दो (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) मोडेलहरू",
     "anthropicDesc": "यो सर्भरमा Claude वा Anthropic SDK क्लाइन्ट पोइन्ट गर्नुहोस् । Anthropic ग्राहकहरूले Claude मोडेल नामहरू पठाउँछन् - प्रत्येक अटोमा नक्शा गर्नुहोस् (राउटरले नि: शुल्क मोडेल छनौट गर्दछ) वा एक विशिष्ट पिन गर्नुहोस्।",
     "anthropicBaseUrl": "आधार URL",
@@ -582,7 +588,8 @@
       "subsetNote": "यो कुञ्जी छानिएका मोडेलहरूमा मात्र सीमित हुनेछ। तपाईं यसलाई पछि कुञ्जीको पङ्क्तिबाट परिवर्तन गर्न सक्नुहुन्छ।",
       "skip": "अहिले होइन",
       "scopedOne": "कुञ्जी 1 मोडेलमा सीमित",
-      "scopedOther": "कुञ्जी {count} मोडेलमा सीमित"
+      "scopedOther": "कुञ्जी {count} मोडेलमा सीमित",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "क्लाइन्ट प्रोफाइलहरू",
     "cpDesc": "प्रत्येक क्लाइन्टका लागि छुट्टै API कुञ्जी, जसको सिस्टम प्रम्प्ट सर्भरले सधैँ लागू गर्छ।",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "कुञ्जी सम्पादन",
+    "editPlatformLocked": "सिर्जना पछि प्रदायक र एन्डपोइन्ट परिवर्तन गर्न मिल्दैन।",
+    "editCredentialHint": "हालको कुञ्जी राख्न खाली छोड्नुहोस्।",
+    "editCredentialPartsRequired": "खाता ID र API टोकन दुवै प्रविष्ट गर्नुहोस्।",
+    "editModels": "मोडेल सम्पादन",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

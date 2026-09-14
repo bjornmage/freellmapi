@@ -5,6 +5,7 @@ import { initDb, getDb, getUnifiedApiKey } from '../../db/index.js';
 import { mintDashboardToken, isGatedApiPath } from '../helpers/auth.js';
 import { isFusionModel, fusionConfigSchema, familyKey, diversifyChain } from '../../services/fusion.js';
 import { getOrderedFusionChain, setRoutingStrategy, getRoutingStrategy, type FusionCandidate } from '../../services/router.js';
+import * as router from '../../services/router.js';
 import { setCooldown } from '../../services/ratelimit.js';
 
 let dashToken = '';
@@ -328,6 +329,38 @@ describe('fusion route (/v1/chat/completions, model: "fusion")', () => {
     expect(upstream.calls.some(c => c.url.includes('api.groq.com'))).toBe(true);
     expect(upstream.calls.some(c => c.url.includes('api.cerebras.ai'))).toBe(true);
     expect(upstream.calls.some(c => c.url.includes('openrouter.ai'))).toBe(false);
+  });
+
+  it('tries overflow after prose when an automatic one-model panel requires a tool call', async () => {
+    const toolCalls = [{ id: 'required-overflow', type: 'function', function: { name: 'get_weather', arguments: '{"city":"Dublin"}' } }];
+    vi.spyOn(router, 'getOrderedFusionChain').mockReturnValue([
+      router.resolveFusionCandidate(toolGroqModel)!, router.resolveFusionCandidate(toolCerebrasModel)!,
+    ]);
+    const upstream = mockUpstreams({
+      'api.groq.com': 'prose does not satisfy a required tool call',
+      'api.cerebras.ai': { content: null, tool_calls: toolCalls, finish_reason: 'tool_calls' },
+    });
+    const { status, body } = await request(app, 'POST', '/v1/chat/completions', {
+      model: 'fusion', messages: [{ role: 'user', content: 'Get the weather' }],
+      tools: [{ type: 'function', function: { name: 'get_weather', parameters: { type: 'object', properties: { city: { type: 'string' } } } } }],
+      tool_choice: 'required', fusion: { k: 1 },
+    }, authHeaders());
+    expect(status).toBe(200);
+    expect(body.choices[0].message.tool_calls).toEqual(toolCalls);
+    expect(upstream.calls.some(call => call.url.includes('api.cerebras.ai'))).toBe(true);
+    expect(body.execution_id).toBeTruthy();
+  });
+
+  it('keeps the execution ID and server error type when required tool calls fail', async () => {
+    mockUpstreams({ 'api.groq.com': 'prose only' });
+    const { status, body } = await request(app, 'POST', '/v1/chat/completions', {
+      model: 'fusion', messages: [{ role: 'user', content: 'Get the weather' }],
+      tools: [{ type: 'function', function: { name: 'get_weather', parameters: { type: 'object' } } }],
+      tool_choice: 'required', fusion: { models: [toolGroqModel] },
+    }, authHeaders());
+    expect(status).toBe(502);
+    expect(body.error.type).toBe('server_error');
+    expect(body.execution_id).toBeTruthy();
   });
 
   it('does not forward a tool call that violates a named tool_choice', async () => {

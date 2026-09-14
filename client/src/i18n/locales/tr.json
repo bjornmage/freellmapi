@@ -47,8 +47,8 @@
     "newEmail": "Yeni e-posta",
     "resetCode": "Sıfırlama kodu",
     "resetCodePlaceholder": "sunucu günlüklerindeki kod",
-    "resetCodeHint": "Şifre sıfırlama kodunu sunucu günlüklerinde bulabilirsiniz.",
-    "forgotPasswordDescription": "Sıfırlama kodu oluşturmak için aşağıya tıklayın. Kod sunucu günlüklerinde görünecek — yeni şifre belirlemek için buraya girin.",
+    "resetCodeHint": "Kod sunucu günlüğündedir. Asla e-postayla gönderilmez.",
+    "forgotPasswordDescription": "Sıfırlama kodu oluşturmak için aşağıdaki düğmeye tıklayın. Kod sunucu günlüğüne yazılır, asla e-postayla gönderilmez. Yeni şifre belirlemek için buraya girin.",
     "requestResetCode": "Kod gönder",
     "requestingResetCode": "Gönderiliyor…",
     "resetPassword": "Şifreyi sıfırla",
@@ -58,7 +58,9 @@
     "backToLogin": "Girişe dön",
     "passwordChanged": "Şifre değiştirildi.",
     "emailChanged": "E-posta değiştirildi.",
-    "passwordReset": "Şifre sıfırlandı. Lütfen giriş yapın."
+    "passwordReset": "Şifre sıfırlandı. Lütfen giriş yapın.",
+    "resetCodeDockerHint": "Docker içinde mi çalışıyor? Kod konteyner günlüğündedir: docker logs <container>.",
+    "desktopSessionFailed": "Kontrol paneli yerel sunucuya giriş yapamadı. FreeLLMAPI uygulamasını kapatıp yeniden açın."
   },
   "common": {
     "save": "Kaydet",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "Yerleştirmeler sekmesinden model: \"auto\" veya bir aile",
     "endpointMessages": "Mesajlar",
     "endpointMessagesHint": "Anthropic uyumlu (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) modelleri",
     "anthropicDesc": "Bu sunucuya bir Claude veya Anthropic SDK istemcisini yönlendirin. Anthropic istemcileri Claude model adlarını gönderir; her birini Otomatik olarak eşler (yönlendirici ücretsiz bir model seçer) veya belirli bir modeli sabitler.",
     "anthropicBaseUrl": "Temel URL",
@@ -582,7 +588,8 @@
       "subsetNote": "Bu anahtar seçili modellerle sınırlı olacak. Bunu daha sonra anahtarın satırından değiştirebilirsiniz.",
       "skip": "Şimdi değil",
       "scopedOne": "Anahtar 1 modelle sınırlandırıldı",
-      "scopedOther": "Anahtar {count} modelle sınırlandırıldı"
+      "scopedOther": "Anahtar {count} modelle sınırlandırıldı",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "İstemci profilleri",
     "cpDesc": "İstemci başına API anahtarları; her birinin sistem istemini sunucu her zaman uygular.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "Anahtarı düzenle",
+    "editPlatformLocked": "Oluşturmadan sonra sağlayıcı ve uç nokta değiştirilemez.",
+    "editCredentialHint": "Geçerli anahtarı korumak için boş bırakın.",
+    "editCredentialPartsRequired": "Hem hesap kimliğini hem de API belirtecini girin.",
+    "editModels": "Modelleri düzenle",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

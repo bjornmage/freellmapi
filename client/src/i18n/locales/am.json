@@ -47,8 +47,8 @@
     "newEmail": "አዲስ ኢሜይል",
     "resetCode": "ዳግም ማስጀመሪያ ኮድ",
     "resetCodePlaceholder": "ከአገልጋይ መዝገብ የተገኘ ኮድ",
-    "resetCodeHint": "የይለፍ ቃል ዳግም ማስጀመሪያ ኮዱን በአገልጋይ መዝገብ ውስጥ ይመልከቱ።",
-    "forgotPasswordDescription": "ኮድ ለመፍጠር ከታች ይጫኑ። ኮዱ በአገልጋይ መዝገብ ውስጥ ይታያል — አዲስ የይለፍ ቃል ለማዘጋጀት እዚህ ያስገቡት።",
+    "resetCodeHint": "ኮዱ በአገልጋይ መዝገብ ውስጥ ነው። በኢሜይል በፍጹም አይላክም።",
+    "forgotPasswordDescription": "ዳግም ማስጀመሪያ ኮድ ለመፍጠር ከታች ያለውን አዝራር ይጫኑ። ኮዱ በአገልጋይ መዝገብ ውስጥ ይጻፋል፣ በኢሜይል በፍጹም አይላክም። አዲስ የይለፍ ቃል ለማዘጋጀት እዚህ ያስገቡት።",
     "requestResetCode": "ኮድ ላክ",
     "requestingResetCode": "በመላክ ላይ…",
     "resetPassword": "የይለፍ ቃል ዳግም አስጀምር",
@@ -58,7 +58,9 @@
     "backToLogin": "ወደ መግቢያ ተመለስ",
     "passwordChanged": "የይለፍ ቃል በተሳካ ሁኔታ ተቀይሯል።",
     "emailChanged": "ኢሜይል በተሳካ ሁኔታ ተቀይሯል።",
-    "passwordReset": "የይለፍ ቃል ዳግም ተጀምሯል። እባክዎ ይግቡ።"
+    "passwordReset": "የይለፍ ቃል ዳግም ተጀምሯል። እባክዎ ይግቡ።",
+    "resetCodeDockerHint": "በ Docker ውስጥ እየሮጠ ነው? ኮዱ በኮንቴይነሩ መዝገብ ውስጥ ነው፦ docker logs <container>።",
+    "desktopSessionFailed": "ዳሽቦርዱ ወደ አካባቢያዊ አገልጋዩ መግባት አልቻለም። FreeLLMAPI ን ዘግተው እንደገና ይክፈቱት።"
   },
   "common": {
     "save": "አስቀምጥ",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" ወይም ቤተሰብ ከ Embeddings ትር",
     "endpointMessages": "መልዕክቶች",
     "endpointMessagesHint": "Anthropic-ተኳሃኝ (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) ሞዴሎች",
     "anthropicDesc": "በዚህ አገልጋይ ላይ Claude ወይም Anthropic ኤስዲኬ ደንበኛን ያመልክቱ። Anthropic ደንበኞች Claude የሞዴል ስሞችን ይልካሉ - እያንዳንዳቸውን ወደ አውቶሞቢል ካርታ ያድርጉ (ራውተር ነፃ ሞዴል ይመርጣል) ወይም አንድ የተወሰነ ይሰኩ.",
     "anthropicBaseUrl": "የመሠረት URL",
@@ -582,7 +588,8 @@
       "subsetNote": "ይህ ቁልፍ በተመረጡት ሞዴሎች ብቻ ይገደባል። ይህን በኋላ ከቁልፉ ረድፍ መቀየር ይችላሉ።",
       "skip": "አሁን አይደለም",
       "scopedOne": "ቁልፍ በ1 ሞዴል ተገድቧል",
-      "scopedOther": "ቁልፍ በ{count} ሞዴሎች ተገድቧል"
+      "scopedOther": "ቁልፍ በ{count} ሞዴሎች ተገድቧል",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "የደንበኛ መገለጫዎች",
     "cpDesc": "ለእያንዳንዱ ደንበኛ የተለየ የ API ቁልፍ፣ እያንዳንዱም አገልጋዩ ሁልጊዜ የሚተገብረው የስርዓት መመሪያ አለው።",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "የቁልፍ አርትዖት",
+    "editPlatformLocked": "የአቅራቢውና የመጨረሻ ነጥብ ከፍጠራ በኋላ ሊለወጡ አይችሉም።",
+    "editCredentialHint": "የአሁኑን ቁልፍ ለመቀጠል ባዶ ይተው።",
+    "editCredentialPartsRequired": "የመለያ ቁጥሩንና የAPI ቶከኑን ሁለቱንም ያስገቡ።",
+    "editModels": "የሞዴሎች አርትዖት",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

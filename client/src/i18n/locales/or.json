@@ -47,8 +47,8 @@
     "newEmail": "ନୂଆ ଇମେଲ",
     "resetCode": "ରିସେଟ କୋଡ",
     "resetCodePlaceholder": "ସର୍ଭର ଲଗରୁ କୋଡ",
-    "resetCodeHint": "ପାସୱାର୍ଡ ରିସେଟ କୋଡ ସର୍ଭର ଲଗରେ ଦେଖନ୍ତୁ।",
-    "forgotPasswordDescription": "ରିସେଟ କୋଡ ତିଆରି କରିବାକୁ ତଳେ କ୍ଲିକ କରନ୍ତୁ। କୋଡ ସର୍ଭର ଲଗରେ ଦେଖାଯିବ — ନୂଆ ପାସୱାର୍ଡ ସେଟ କରିବାକୁ ଏଠାରେ ଦିଅନ୍ତୁ।",
+    "resetCodeHint": "କୋଡ ସର୍ଭର ଲଗରେ ଅଛି। ଏହା କେବେ ବି ଇମେଲରେ ପଠାଯାଏ ନାହିଁ।",
+    "forgotPasswordDescription": "ରିସେଟ କୋଡ ତିଆରି କରିବାକୁ ତଳେ ଥିବା ବଟନ କ୍ଲିକ କରନ୍ତୁ। କୋଡ ସର୍ଭର ଲଗରେ ଲେଖାଯାଏ, କେବେ ବି ଇମେଲ କରାଯାଏ ନାହିଁ। ନୂଆ ପାସୱାର୍ଡ ସେଟ କରିବାକୁ ଏଠାରେ ଦିଅନ୍ତୁ।",
     "requestResetCode": "ରିସେଟ କୋଡ ପଠାନ୍ତୁ",
     "requestingResetCode": "ପଠାଯାଉଛି…",
     "resetPassword": "ପାସୱାର୍ଡ ରିସେଟ କରନ୍ତୁ",
@@ -58,7 +58,9 @@
     "backToLogin": "ସାଇନ ଇନକୁ ଫେରନ୍ତୁ",
     "passwordChanged": "ପାସୱାର୍ଡ ସଫଳତାର ସହ ବଦଳିଲା।",
     "emailChanged": "ଇମେଲ ସଫଳତାର ସହ ବଦଳିଲା।",
-    "passwordReset": "ପାସୱାର୍ଡ ରିସେଟ ହେଲା। ଦୟାକରି ସାଇନ ଇନ କରନ୍ତୁ।"
+    "passwordReset": "ପାସୱାର୍ଡ ରିସେଟ ହେଲା। ଦୟାକରି ସାଇନ ଇନ କରନ୍ତୁ।",
+    "resetCodeDockerHint": "Docker ରେ ଚଳାଉଛନ୍ତି କି? କୋଡ କଣ୍ଟେନର ଲଗରେ ଅଛି: docker logs <container>।",
+    "desktopSessionFailed": "ଡ୍ୟାସବୋର୍ଡ ଲୋକାଲ ସର୍ଭରରେ ସାଇନ ଇନ କରିପାରିଲା ନାହିଁ। FreeLLMAPI ବନ୍ଦ କରି ପୁଣି ଖୋଲନ୍ତୁ।"
   },
   "common": {
     "save": "ସଞ୍ଚୟ କରନ୍ତୁ",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "ଏମ୍ବେଡିଂସ୍ ଟ୍ୟାବ୍ ରୁ model: \"auto\" କିମ୍ବା ଏକ ପରିବାର",
     "endpointMessages": "ବାର୍ତ୍ତା",
     "endpointMessagesHint": "Anthropic-ସୁସଙ୍ଗତ (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) ମଡେଲ୍",
     "anthropicDesc": "ଏହି ସର୍ଭରରେ ଏକ Claude କିମ୍ୱା Anthropic SDK କ୍ଲାଏଣ୍ଟ ପଏଣ୍ଟ କରନ୍ତୁ। Anthropic ଗ୍ରାହକମାନେ Claude ମଡେଲ୍ ନାମ ପଠାନ୍ତି - ପ୍ରତ୍ୟେକକୁ ଅଟୋକୁ ମାନଚିତ୍ର କରନ୍ତୁ (ରାଉଟର ଏକ ମାଗଣା ମଡେଲ୍ ବାଛିଥାଏ) କିମ୍ବା ଏକ ନିର୍ଦ୍ଦିଷ୍ଟ ପିନ୍ କରନ୍ତୁ ।",
     "anthropicBaseUrl": "ବେସ୍ URL",
@@ -582,7 +588,8 @@
       "subsetNote": "ଏହି କୀ କେବଳ ଚୟନ କରାଯାଇଥିବା ମଡେଲଗୁଡିକରେ ସୀମିତ ରହିବ। ଆପଣ ଏହାକୁ ପରେ କୀର ଧାଡ଼ିରୁ ବଦଳାଇପାରିବେ।",
       "skip": "ବର୍ତ୍ତମାନ ନୁହେଁ",
       "scopedOne": "କୀ 1 ମଡେଲରେ ସୀମିତ",
-      "scopedOther": "କୀ {count} ମଡେଲରେ ସୀମିତ"
+      "scopedOther": "କୀ {count} ମଡେଲରେ ସୀମିତ",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "କ୍ଲାଏଣ୍ଟ ପ୍ରୋଫାଇଲ୍",
     "cpDesc": "ପ୍ରତ୍ୟେକ କ୍ଲାଏଣ୍ଟ ପାଇଁ ଅଲଗା API କି; ଏହାର ସିଷ୍ଟମ୍ ପ୍ରମ୍ପ୍ଟକୁ ସର୍ଭର ସର୍ବଦା ପ୍ରୟୋଗ କରେ।",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "କି ସମ୍ପାଦନ",
+    "editPlatformLocked": "ସୃଷ୍ଟି ପରେ ପ୍ରଦାତା ଓ ଏଣ୍ଡପଏଣ୍ଟ ବଦଳାଯାଇପାରିବ ନାହିଁ।",
+    "editCredentialHint": "ବର୍ତ୍ତମାନର କି ରଖିବା ପାଇଁ ଖାଲି ରଖନ୍ତୁ।",
+    "editCredentialPartsRequired": "ଖାତା ID ଓ API ଟୋକେନ୍ ଉଭୟ ଦିଅନ୍ତୁ।",
+    "editModels": "ମଡେଲ ସମ୍ପାଦନ",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

@@ -47,8 +47,8 @@
     "newEmail": "Bagong e-mail",
     "resetCode": "Reset code",
     "resetCodePlaceholder": "code mula sa server logs",
-    "resetCodeHint": "Tingnan ang reset code sa server logs.",
-    "forgotPasswordDescription": "I-click sa ibaba para bumuo ng reset code. Lalabas ang code sa server logs — ilagay ito rito para magtakda ng bagong password.",
+    "resetCodeHint": "Nasa server log ang code. Hindi ito kailanman ipinapadala sa email.",
+    "forgotPasswordDescription": "I-click ang button sa ibaba para bumuo ng reset code. Isinusulat ang code sa server log, hindi kailanman ipinapadala sa email. Ilagay ito rito para magtakda ng bagong password.",
     "requestResetCode": "Ipadala ang code",
     "requestingResetCode": "Ipinapadala…",
     "resetPassword": "I-reset ang password",
@@ -58,7 +58,9 @@
     "backToLogin": "Bumalik sa pag-sign in",
     "passwordChanged": "Matagumpay na napalitan ang password.",
     "emailChanged": "Matagumpay na napalitan ang e-mail.",
-    "passwordReset": "Na-reset ang password. Mag-sign in po."
+    "passwordReset": "Na-reset ang password. Mag-sign in po.",
+    "resetCodeDockerHint": "Tumatakbo sa Docker? Nasa container log ang code: docker logs <container>.",
+    "desktopSessionFailed": "Hindi nakapag-sign in ang dashboard sa lokal na server. Isara ang FreeLLMAPI at buksan itong muli."
   },
   "common": {
     "save": "I-save",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" o pamilya mula sa Embeddings tab",
     "endpointMessages": "Mga Mensahe",
     "endpointMessagesHint": "Anthropic-compatible (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Claude (Anthropic) na mga modelo",
     "anthropicDesc": "I-point ang Claude o Anthropic SDK client sa server na ito. Anthropic mga kliyente ang nagpapadala ng Claude pangalan ng modelo — i-map ang bawat isa sa Auto (pipili ang router ng libreng modelo) o i-pin ang isang partikular na modelo.",
     "anthropicBaseUrl": "Base URL",
@@ -582,7 +588,8 @@
       "subsetNote": "Malilimitahan ang key na ito sa mga napiling modelo. Mababago mo ito mamaya mula sa row ng key.",
       "skip": "Hindi ngayon",
       "scopedOne": "Limitado ang key sa 1 modelo",
-      "scopedOther": "Limitado ang key sa {count} na modelo"
+      "scopedOther": "Limitado ang key sa {count} na modelo",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "Mga profile ng client",
     "cpDesc": "Hiwalay na API key para sa bawat client, bawat isa may system prompt na palaging inilalapat ng server.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "I-edit ang key",
+    "editPlatformLocked": "Hindi mababago ang provider at endpoint pagkatapos gawin.",
+    "editCredentialHint": "Iwanang blangko para panatilihin ang kasalukuyang key.",
+    "editCredentialPartsRequired": "Ilagay pareho ang account ID at API token.",
+    "editModels": "I-edit ang mga model",
+    "editModelsHint": "Choose which catalog models this key may serve. Select everything to clear the scope so future catalog models use it too.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",

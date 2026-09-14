@@ -47,8 +47,8 @@
     "newEmail": "Novo e-mail",
     "resetCode": "Código de reposição",
     "resetCodePlaceholder": "código dos registos do servidor",
-    "resetCodeHint": "Consulte os registos do servidor para obter o código.",
-    "forgotPasswordDescription": "Clique abaixo para gerar um código de reposição. O código aparecerá nos registos do servidor — introduza-o aqui para definir uma nova palavra-passe.",
+    "resetCodeHint": "O código está no registo do servidor. Nunca é enviado por e-mail.",
+    "forgotPasswordDescription": "Clique no botão abaixo para gerar um código de reposição. O código é escrito no registo do servidor, nunca enviado por e-mail. Introduza-o aqui para definir uma nova palavra-passe.",
     "requestResetCode": "Enviar código",
     "requestingResetCode": "A enviar…",
     "resetPassword": "Repor palavra-passe",
@@ -58,7 +58,9 @@
     "backToLogin": "Voltar ao início de sessão",
     "passwordChanged": "Palavra-passe alterada com sucesso.",
     "emailChanged": "E-mail alterado com sucesso.",
-    "passwordReset": "Palavra-passe reposta. Inicie sessão."
+    "passwordReset": "Palavra-passe reposta. Inicie sessão.",
+    "resetCodeDockerHint": "Está a usar Docker? O código está no registo do contentor: docker logs <container>.",
+    "desktopSessionFailed": "O painel não conseguiu iniciar sessão no servidor local. Feche o FreeLLMAPI e volte a abri-lo."
   },
   "common": {
     "save": "Guardar",
@@ -385,6 +387,10 @@
     "endpointEmbeddingsHint": "model: \"auto\" ou uma família do separador Embeddings",
     "endpointMessages": "Mensagens",
     "endpointMessagesHint": "Compatível com Anthropic (Claude)",
+    "quickStart": "Quick start",
+    "quickStartDesc": "Use auto for your active routing chain, or auto:fast to prioritize speed across enabled models. Replace $YOUR_KEY with your unified API key.",
+    "exampleAuto": "Auto mode (use the active chain)",
+    "exampleFast": "Fast mode (prioritize speed)",
     "anthropicTitle": "Modelos Claude (Anthropic)",
     "anthropicDesc": "Aponta um cliente SDK Claude ou Anthropic para este servidor. Anthropic clientes enviam Claude nomes de modelos — mapeem cada um para Auto (o router escolhe um modelo livre) ou pinhem um modelo específico.",
     "anthropicBaseUrl": "Base URL",
@@ -582,7 +588,8 @@
       "subsetNote": "Esta chave fica limitada aos modelos selecionados. Pode alterar isto mais tarde na linha da chave.",
       "skip": "Agora não",
       "scopedOne": "Chave limitada a 1 modelo",
-      "scopedOther": "Chave limitada a {count} modelos"
+      "scopedOther": "Chave limitada a {count} modelos",
+      "allSaved": "Key serves every catalog model"
     },
     "cpTitle": "Perfis de cliente",
     "cpDesc": "Chaves de API por cliente, cada uma com um prompt de sistema que o servidor aplica sempre.",
@@ -606,7 +613,17 @@
     "testProxy": "Test",
     "testingProxy": "Testing…",
     "proxyTestOk": "Proxy works — {ms}ms round trip",
-    "proxyTestFail": "Proxy failed: {reason}"
+    "proxyTestFail": "Proxy failed: {reason}",
+    "editKey": "Editar chave",
+    "editPlatformLocked": "O fornecedor e o endpoint não podem ser alterados após a criação.",
+    "editCredentialHint": "Deixe em branco para manter a chave atual.",
+    "editCredentialPartsRequired": "Introduza o ID da conta e o token da API.",
+    "editModels": "Editar modelos",
+    "editModelsHint": "Escolha que modelos do catálogo esta chave pode servir. Selecione tudo para limpar o âmbito.",
+    "editModelsCustomHint": "Choose which registered endpoint models this key may serve. Select everything to clear the scope.",
+    "editModelsSync": "Check catalog updates",
+    "editModelsSyncing": "Checking…",
+    "editModelsSynced": "Model catalog checked"
   },
   "backups": {
     "title": "Backups",
